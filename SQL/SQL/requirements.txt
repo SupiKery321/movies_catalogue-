@@ -1,0 +1,23 @@
+def execute_sql(conn, sql):
+          """ Execute sql
+      :param conn: Connection object
+      :param sql: a SQL script
+      :return:
+      """
+      try:
+        c = conn.cursor()
+        c.execute(sql)
+      except Error as e:
+        print(e)
+
+    if __name__ == "__main__":
+
+      sql = """
+      -- projects table
+      CREATE TABLE IF NOT EXISTS projects (
+         id integer PRIMARY KEY,
+         expense text NOT NULL,
+         price text,
+         done text
+      );
+      """
